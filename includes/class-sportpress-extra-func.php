@@ -156,6 +156,8 @@ class Sportpress_Extra_Func {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'init', $plugin_admin, 'register_sportspress_metrics_taxonomy' );
+		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'sportspress_player_custom_meta' );
 
 	}
 

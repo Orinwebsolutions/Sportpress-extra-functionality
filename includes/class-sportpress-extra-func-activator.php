@@ -30,7 +30,9 @@ class Sportpress_Extra_Func_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
+		if (!is_plugin_active('sportspress/sportspress.php')){
+			die('Plugin NOT activated, because Sportspress plugin is not activated in your site, Please activate Sportspress plugin plugin!!');
+		}
 	}
 
 }
