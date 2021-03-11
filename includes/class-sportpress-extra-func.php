@@ -158,6 +158,9 @@ class Sportpress_Extra_Func {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'init', $plugin_admin, 'register_sportspress_metrics_taxonomy' );
 		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'sportspress_player_custom_meta' );
+		$this->loader->add_action( 'save_post', $plugin_admin, 'sportspress_save_player_custom_meta', 10, 2 );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'sportspress_admin_init' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'sportspress_admin_menu' );
 
 	}
 
