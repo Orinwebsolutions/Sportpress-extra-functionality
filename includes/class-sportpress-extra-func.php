@@ -177,6 +177,10 @@ class Sportpress_Extra_Func {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_filter( 'woocommerce_account_menu_items', $plugin_public, 'sportspress_wc_account_menu_items' );
+		$this->loader->add_action( 'woocommerce_account_player-metrics_endpoint', $plugin_public, 'sportspress_custom_endpoint_content' );
+		$this->loader->add_action( 'init', $plugin_public, 'sportspress_custom_endpoint_rewite_rule' );
+		$this->loader->add_filter( 'woocommerce_get_query_vars', $plugin_public, 'sportspress_custom_endpoint_query_vars', 0 );
 
 	}
 
